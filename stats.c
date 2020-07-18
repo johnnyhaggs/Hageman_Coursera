@@ -27,6 +27,8 @@
 /* Size of the Data Set */
 #define SIZE (40)
 
+unsigned char median, mean, maximum, minimum;
+
 void main() {
 	
   /* Variable Declarations */
@@ -37,40 +39,53 @@ void main() {
                                 7,  87, 250, 230,  99,   3, 100,  90};  
   unsigned int n_test = SIZE;
 
-
-
-
   /* Statistics and Printing Functions */
-
-  void print_statistics(){
-	  //TODO: add code
-  }
-
-  void print_array(unsigned char * array[], unsigned int n){
-	  //TODO: add code
-  }
-
-  unsigned char find_median(unsigned char * array[], unsigned int n){
-	  //TODO: add code
-  }
-
-  unsigned char find_mean(unsigned char * array[], unsigned int n){
-	  //TODO: add code
-  }
-
-  unsigned char find_maximum(unsigned char * array[], unsigned int n){
-	  //TODO: add code
-  }
-
-  unsigned char find_minimum(unsigned char * array[], unsigned int n){
-	  //TODO: add code
-  }
-
-  void sort_array(unsigned char * array[], unsigned int n){
-	  //TODO: add code
-  }
-
+  sort_array(test, n_test);
+  print_array(test, n_test);
+  median = find_median(test, n_test);
+  mean = find_mean(test, n_test);
+  maximum = find_maximum(test, n_test);
+  minimum = find_minimum(test, n_test);
+  print_statistics();
 }
 
 /* Add other Implementation File Code Here */
+
+void print_statistics(){
+	//TODO: add code
+	printf("%u, %u, %u, %u\n", median, mean, maximum, minimum);
+}
+
+void print_array(unsigned char *array, unsigned int n){
+	//TODO: add code
+}
+
+unsigned char find_median(unsigned char *array, unsigned int n){
+	//TODO: add code
+	unsigned char median = 0;
+	return median;
+}
+
+unsigned char find_mean(unsigned char *array, unsigned int n){
+	//TODO: add code
+	unsigned char mean = 0;
+	return mean;
+}
+
+unsigned char find_maximum(unsigned char *array, unsigned int n){
+	//TODO: add code
+	unsigned char maximum = 0;
+	return maximum;
+}
+
+unsigned char find_minimum(unsigned char *array, unsigned int n){
+	//TODO: add code
+	unsigned char minimum = 0;
+	return minimum;
+}
+
+void sort_array(unsigned char *array, unsigned int n){
+	//TODO: add code
+}
+
 
