@@ -40,8 +40,8 @@ void main() {
   unsigned int n_test = SIZE;
 
   /* Statistics and Printing Functions */
-  sort_array(test, n_test);
-  print_array(test, n_test);
+  //sort_array(test, n_test);
+  //print_array(test, n_test);
   median = find_median(test, n_test);
   mean = find_mean(test, n_test);
   maximum = find_maximum(test, n_test);
@@ -53,7 +53,7 @@ void main() {
 
 void print_statistics(){
 	//TODO: add code
-	printf("median: %u,mean: %u,max: %u,min: %u\n", median, mean, maximum, minimum);
+	printf("median: %u, mean: %u, max: %u, min: %u\n", median, mean, maximum, minimum);
 }
 
 void print_array(unsigned char* array, unsigned int n){
@@ -66,11 +66,22 @@ void print_array(unsigned char* array, unsigned int n){
 }
 
 unsigned char find_median(unsigned char* array, unsigned int n){
-	//TODO: add code
 	unsigned char median;
+	unsigned int mid_index = n / 2;
+
 	sort_array(array, n);
-	//TODO: figure out mid index and then average mid two if even number of data
-	if(n % 2 != 0) {mid_index = n / 2};
+       	
+	if(n % 2 != 0) {
+		//if number of elements in the array is odd,
+		//we simply pick the middle element of the sorted array
+		median = array[mid_index];
+	}else{
+		//if number of elements in the array is even,
+		//we take the mean of the two elements around
+		//the middle of the sorted array.
+		median = (array[mid_index] + array[mid_index+1]) / 2;
+	}
+	
 	return median;
 }
 
