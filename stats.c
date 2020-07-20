@@ -53,7 +53,7 @@ void main() {
 
 void print_statistics(){
 	//TODO: add code
-	printf("median: %u, mean: %u, max: %u, min: %u\n", median, mean, maximum, minimum);
+	printf("Statistics:\nmedian: %u,\nmean: %u,\nmax: %u,\nmin: %u\n", median, mean, maximum, minimum);
 }
 
 void print_array(unsigned char* array, unsigned int n){
