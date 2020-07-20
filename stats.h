@@ -39,7 +39,7 @@ void print_statistics();
  * @param array Array of numbers to get printed
  * @param n The number of elements in array
  */
-void print_array(unsigned char *array, unsigned int n);
+void print_array(unsigned char* array, unsigned int n);
 
 
 /**
@@ -52,7 +52,7 @@ void print_array(unsigned char *array, unsigned int n);
  *
  * @return The median of the array
  */
-unsigned char find_median(unsigned char *array, unsigned int n);
+unsigned char find_median(unsigned char* array, unsigned int n);
 
 
 /**
@@ -63,9 +63,9 @@ unsigned char find_median(unsigned char *array, unsigned int n);
  * @param array Array of numbers to analyze
  * @param n The number of elements in array
  *
- * @return The mean of the array
+ * @return The mean of the array rounded down to nearest integer
  */
-unsigned char find_mean(unsigned char *array, unsigned int n);
+unsigned char find_mean(unsigned char* array, unsigned int n);
 
 
 /**
@@ -78,7 +78,7 @@ unsigned char find_mean(unsigned char *array, unsigned int n);
  *
  * @return The maximum of the array
  */
-unsigned char find_maximum(unsigned char *array, unsigned int n);
+unsigned char find_maximum(unsigned char* array, unsigned int n);
 
 
 /**
@@ -91,7 +91,7 @@ unsigned char find_maximum(unsigned char *array, unsigned int n);
  *
  * @return The minimum of the array
  */
-unsigned char find_minimum(unsigned char *array, unsigned int n);
+unsigned char find_minimum(unsigned char* array, unsigned int n);
 
 
 /**
@@ -105,7 +105,20 @@ unsigned char find_minimum(unsigned char *array, unsigned int n);
  * @param array Array of numbers to sort
  * @param n The number of elements in array
  */
-void sort_array(unsigned char *array, unsigned int n);
+void sort_array(unsigned char* array, unsigned int n);
 
+
+/**
+ * @brief Swaps location of two input variables
+ *
+ * Given pointers to two variables, this function swaps
+ * the location of those two variables. This helps when
+ * rearranging an array of values such as during a sort
+ * routine.
+ *
+ * @param a First element
+ * @param b Second element
+ */
+void swap(unsigned char* a, unsigned char* b);
 
 #endif /* __STATS_H__ */

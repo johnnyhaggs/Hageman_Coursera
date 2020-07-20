@@ -53,39 +53,66 @@ void main() {
 
 void print_statistics(){
 	//TODO: add code
-	printf("%u, %u, %u, %u\n", median, mean, maximum, minimum);
+	printf("median: %u,mean: %u,max: %u,min: %u\n", median, mean, maximum, minimum);
 }
 
-void print_array(unsigned char *array, unsigned int n){
+void print_array(unsigned char* array, unsigned int n){
 	//TODO: add code
+	printf("[");
+	for (int i = 0; i < n; i++){
+		printf("%u ", array[i]);
+	}
+	printf("]\n");
 }
 
-unsigned char find_median(unsigned char *array, unsigned int n){
+unsigned char find_median(unsigned char* array, unsigned int n){
 	//TODO: add code
-	unsigned char median = 0;
+	unsigned char median;
+	sort_array(array, n);
+	//TODO: figure out mid index and then average mid two if even number of data
+	if(n % 2 != 0) {mid_index = n / 2};
 	return median;
 }
 
-unsigned char find_mean(unsigned char *array, unsigned int n){
-	//TODO: add code
-	unsigned char mean = 0;
+unsigned char find_mean(unsigned char* array, unsigned int n){
+	unsigned int sum = 0;
+	unsigned char mean;
+	for(int i = 0; i < n; i++) {sum += array[i];}
+	mean = sum / n;
 	return mean;
 }
 
-unsigned char find_maximum(unsigned char *array, unsigned int n){
-	//TODO: add code
+unsigned char find_maximum(unsigned char* array, unsigned int n){
+	//TODO: add checks and prevent errors
 	unsigned char maximum = 0;
+	for(int i=0; i<n; i++){
+		if (array[i] > maximum) {maximum = array[i];}
+	}
 	return maximum;
 }
 
-unsigned char find_minimum(unsigned char *array, unsigned int n){
-	//TODO: add code
-	unsigned char minimum = 0;
+unsigned char find_minimum(unsigned char* array, unsigned int n){
+	//TODO: add checks and prevent errors
+	unsigned char minimum = 0xFF;
+	for(int i=0; i<n; i++){
+		if (array[i] < minimum) {minimum = array[i];}
+	}
 	return minimum;
 }
 
-void sort_array(unsigned char *array, unsigned int n){
-	//TODO: add code
+void sort_array(unsigned char* array, unsigned int n){
+	//reference: https://www.geeksforgeeks.org/c-program-to-sort-an-array-in-ascending-order/
+	for (unsigned int i = 0; i < n - 1; i++){
+		unsigned int min_index = i;
+		for (unsigned int j = i + 1; j < n; j++){
+			if (array[j] < array[min_index]) {min_index = j;}
+		}
+		swap(&array[i], &array[min_index]);
+	}
 }
 
-
+void swap(unsigned char* a, unsigned char* b){
+	unsigned int temp = *a;
+	*a = *b;
+	*b = temp;
+}
