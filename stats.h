@@ -51,6 +51,8 @@ void print_array(unsigned char* array, unsigned int n);
  * @param n The number of elements in array
  *
  * @return The median of the array
+ *
+ * Reference: https://www.tutorialspoint.com/learn_c_by_examples/median_program_in_c.htm
  */
 unsigned char find_median(unsigned char* array, unsigned int n);
 
@@ -104,6 +106,8 @@ unsigned char find_minimum(unsigned char* array, unsigned int n);
  *
  * @param array Array of numbers to sort
  * @param n The number of elements in array
+ *
+ * Reference: https://www.geeksforgeeks.org/c-program-to-sort-an-array-in-ascending-order/
  */
 void sort_array(unsigned char* array, unsigned int n);
 

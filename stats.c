@@ -40,29 +40,28 @@ void main() {
   unsigned int n_test = SIZE;
 
   /* Statistics and Printing Functions */
-  //sort_array(test, n_test);
-  //print_array(test, n_test);
   median = find_median(test, n_test);
   mean = find_mean(test, n_test);
   maximum = find_maximum(test, n_test);
   minimum = find_minimum(test, n_test);
+  sort_array(test, n_test);
+  print_array(test, n_test);
   print_statistics();
 }
 
-/* Add other Implementation File Code Here */
+/* Other Implementation File Code Here */
 
 void print_statistics(){
-	//TODO: add code
-	printf("Statistics:\nmedian: %u,\nmean: %u,\nmax: %u,\nmin: %u\n", median, mean, maximum, minimum);
+	printf("STATISTICS\nmedian: %u\nmean: %u\nmax: %u\nmin: %u\n\n", median, mean, maximum, minimum);
 }
 
 void print_array(unsigned char* array, unsigned int n){
-	//TODO: add code
-	printf("[");
+	sort_array(array, n);
+	printf("\nSORTED ARRAY\n[ ");
 	for (int i = 0; i < n; i++){
 		printf("%u ", array[i]);
 	}
-	printf("]\n");
+	printf("]\n\n");
 }
 
 unsigned char find_median(unsigned char* array, unsigned int n){
@@ -94,7 +93,6 @@ unsigned char find_mean(unsigned char* array, unsigned int n){
 }
 
 unsigned char find_maximum(unsigned char* array, unsigned int n){
-	//TODO: add checks and prevent errors
 	unsigned char maximum = 0;
 	for(int i=0; i<n; i++){
 		if (array[i] > maximum) {maximum = array[i];}
@@ -103,7 +101,6 @@ unsigned char find_maximum(unsigned char* array, unsigned int n){
 }
 
 unsigned char find_minimum(unsigned char* array, unsigned int n){
-	//TODO: add checks and prevent errors
 	unsigned char minimum = 0xFF;
 	for(int i=0; i<n; i++){
 		if (array[i] < minimum) {minimum = array[i];}
@@ -112,7 +109,6 @@ unsigned char find_minimum(unsigned char* array, unsigned int n){
 }
 
 void sort_array(unsigned char* array, unsigned int n){
-	//reference: https://www.geeksforgeeks.org/c-program-to-sort-an-array-in-ascending-order/
 	for (unsigned int i = 0; i < n - 1; i++){
 		unsigned int min_index = i;
 		for (unsigned int j = i + 1; j < n; j++){
