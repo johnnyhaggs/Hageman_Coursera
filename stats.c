@@ -110,11 +110,11 @@ unsigned char find_minimum(unsigned char* array, unsigned int n){
 
 void sort_array(unsigned char* array, unsigned int n){
 	for (unsigned int i = 0; i < n - 1; i++){
-		unsigned int min_index = i;
+		unsigned int max_index = i;
 		for (unsigned int j = i + 1; j < n; j++){
-			if (array[j] < array[min_index]) {min_index = j;}
+			if (array[j] > array[max_index]) {max_index = j;}
 		}
-		swap(&array[i], &array[min_index]);
+		swap(&array[i], &array[max_index]);
 	}
 }
 
